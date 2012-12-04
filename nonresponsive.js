@@ -38,7 +38,7 @@
          */
         parse: function(data, apply) {
             // Find all '@media type and (query) and (query), type and (query) { css rules }'
-            data.replace(/@media\s*([^\{]+)\{(([^\{\}]*\{[^\}\{]*\})+)?\}/gi, function(block, mql, rules) {
+            data.replace(/@media\s*(\w[^\{]+)\{(([^\{\}]*\{[^\}\{]*\})+)?\}/gi, function(block, mql, rules) {
                 if (mql && rules) {
                     _queryList.push(mql);
                     _rulesList.push(rules);
