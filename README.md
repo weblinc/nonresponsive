@@ -1,18 +1,20 @@
 Nonresponsive
 =============
 
-Media queries for the unsupportive
+CSS 3 media queries for the unsupportive (IE 6-8). Support more features with greater speed
 
 * **Browsers**: IE 6-8
 * **Features**: width, height, aspect-ratio, device-width, device-height, device-aspect-ratio, orientation. See https://github.com/weblinc/media-match for full list
-* **Speed**: Better or close ops/sec when compared to Respond.js under JSLitmus with more feature support
+* **Speed**: Better ops/sec when compared to Respond.js under JSLitmus with more feature support
 * **Size**: 4kb minified (Nonresponsive: < 1kb, Media: 3kb)
 
 ## Speed test (IE9 in IE7 standards mode)
 
 This was a difficult test to run due to timed throttling occurring in both implementations.
-Notice the throttled vs non-throttled ops/sec. Respond has a better throttling method at the moment.
-Nonresponsive is without a doubt fast and feature rich. We'd like your help to make it better.
+Notice the throttled vs non-throttled ops/sec. 
+Respond shows a slight edge when throttled but based on the unthrottled result, 
+Nonresponsive's underlying code executes more than 20 times faster.
+Nonresponsive is without a doubt fast and feature rich. We'd like your help to make it even better.
 
 * **Nonresponsive.parse/Respond translate**: Cleared query and rule arrays on each iteration
 * **Nonresponsive.apply/Respond.callMedia**: Ran tests with throttle and without
