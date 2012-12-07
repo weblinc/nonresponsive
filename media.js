@@ -101,7 +101,7 @@
             "aspect-ratio"          : 0, /* Update on resize */
             "color"                 : screen.colorDepth,
             "color-index"           : Math.pow(2, screen.colorDepth),
-            "device-aspect-ratio"   : win.devicePixelRatio || (screen.width / screen.height).toFixed(2),
+            "device-aspect-ratio"   : (screen.width / screen.height).toFixed(2),
             "device-width"          : screen.width,
             "device-height"         : screen.height,
             "monochrome"            : Number(screen.colorDepth == 2),
@@ -128,7 +128,7 @@
                     return (Media.features.resolution / 72) * match[1];
                 }
 
-                return parseFloat(match[1]);
+                return match[1];
             }
 
             // Convert aspect ratio to decimals
