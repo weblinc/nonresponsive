@@ -3,8 +3,10 @@
 
 // Nonresponsive
 (function(win, source) {
+    'use strict';
+
     // Check if we need to support this browser
-    if (Media.supported) {
+    if (win.Media.supported) {
         win.Nonresponsive = {
             parse: function() {},
             apply: function() {}
@@ -55,15 +57,13 @@
             clearTimeout(_timer);
 
             _timer = setTimeout(function() {
-                // Updated supported media query features
-                Media.setMutableFeatures();
                 _cssText = '';
 
                 // Loop over query list and evaluate each query then build @media string
                 for (var i = 0, il = _queryList.length; i < il; i++) {
                     var match = false;
-                    if ((match = Media.parseMatch(_queryList[i], true))) {
-                        _cssText += '@media ' + match.type.name + ' {' + _rulesList[i] + '}\n';
+                    if ((match = win.Media.parseMatch(_queryList[i], true))) {
+                        _cssText += '@media ' + match.type + ' {' + _rulesList[i] + '}\n';
                     }
                 }
 
@@ -81,9 +81,9 @@
     };
 
     if (source) {
-        Nonresponsive.parse(source);
-        Nonresponsive.apply();
+        win.Nonresponsive.parse(source);
+        win.Nonresponsive.apply();
     }
 
-    Media.listen(Nonresponsive.apply);
+    Media.listen(win.Nonresponsive.apply);
 })(window /* [, css @media blocks] */);

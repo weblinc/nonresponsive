@@ -12,8 +12,8 @@
             var mediaBlocks = '@media screen and (min-width: 600px) and (min-height: 400px), screen and (min-height: 400px) {body { background: green; }}';
             Nonresponsive.parse(mediaBlocks, true);
 
-            JSLitmus.test('Nonresponsive.apply', function() {
-                Nonresponsive.apply();
+            JSLitmus.test('Nonresponsive.parse', function() {
+                Nonresponsive.parse(mediaBlocks, true);
             });
         </script>
     </body>
