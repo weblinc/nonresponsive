@@ -76,3 +76,6 @@ Feedback is welcome and hope to see this in your next project.
     Nonresponsive.apply();
 </script>
 ```
+
+###Dependencies
+https://github.com/weblinc/media-match is the only dependancy thus far and we hope to keep it that way. Media is used to parse the media queries array ex. Media.parseMatch('(min-width: 200px) and (max-width: 600px)').
