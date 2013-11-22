@@ -69,7 +69,7 @@
          */
         parse: function(data) {
             // Find all '@media type and (query) and (query), type and (query) { css rules }'
-            data.replace(/@media\s*(\w[^\{]+)\{(([^\{\}]*\{[^\}\{]*\})+)?\}/gi, function(block, media, rules) {
+            data.replace(/@media\s*(\w[^\{]+)\{(([^\{\}]*\{[^\}\{]*\})+)?[^}]*\}/gi, function(block, media, rules) {
                 if (media && rules) {
                     // Requires media-match polyfill. See https://github.com/weblinc/media-match
                     var mql = win.matchMedia(media);
